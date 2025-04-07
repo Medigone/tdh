@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TDH - Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">TDH</div>
+    <!-- Bouton Hamburger pour mobile -->
+    <button class="menu-toggle" aria-label="Ouvrir le menu">
+      &#9776;
+    </button>
+    <!-- Navigation principale -->
+    <nav class="nav-desktop">
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="btn-outline">Connexion</a></li>
+      </ul>
+    </nav>
+    <!-- Navigation mobile cachée par défaut -->
+    <nav class="nav-mobile">
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Connexion</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Section Hero -->
+  <section class="hero">
+    <h1>"Redéfinissez la manière dont vous gérez votre entreprise"</h1>
+    <p>Formations, outils sur mesure et motivation du personnel pour booster votre entreprise.</p>
+    <a class="btn-outline" href="#">En savoir plus</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 TDH. Tous droits réservés.
+  </footer>
+
+  <!-- Script pour basculer le menu mobile -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMobile = document.querySelector(".nav-mobile");
+
+      menuToggle.addEventListener("click", function () {
+        navMobile.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
