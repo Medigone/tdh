@@ -1,0 +1,558 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header / Navigation */
+.main-header {
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-right: 2rem;
+  }
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 30px;
+}
+
+.main-nav a {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: #e53e3e;
+}
+
+.main-nav a.active:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e53e3e;
+}
+
+/* Modifications du CSS */
+
+
+
+/* Header / Navigation */
+.main-header {
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Augmenté pour être au-dessus du menu mobile */
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Pour positionner le menu mobile */
+}
+
+.logo {
+    display: flex; /* Maintenu depuis le code utilisateur */
+    align-items: center; /* Maintenu depuis le code utilisateur */
+    /* Les styles spécifiques .logo comme font-size, color, margin-right ont été retirés car ils semblaient être d'une version précédente ou d'un autre contexte */
+}
+
+.logo-img {
+    height: 40px;
+}
+
+.main-nav {
+    /* Sera géré par les media queries pour le positionnement mobile */
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0; /* Assurer pas de marge par défaut */
+    padding: 0; /* Assurer pas de padding par défaut */
+}
+
+.main-nav li {
+    margin-left: 30px;
+}
+
+.main-nav a {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    padding: 5px 0; /* Ajout d'un peu de padding pour une meilleure cliquabilité */
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: #e53e3e;
+}
+
+.main-nav a.active:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e53e3e;
+}
+
+/* Icône Hamburger */
+.menu-toggle {
+    display: none; /* Caché par défaut sur grand écran */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Au-dessus du header mais en dessous du menu ouvert si besoin */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Styles pour l'état ouvert du menu (X) */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+.main-nav a:hover, .main-nav a.active {
+    color: #e53e3e;
+}
+
+.main-nav a.active:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e53e3e;
+}
+
+/* Hero Section */
+.hero {
+    padding: 0;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero-split {
+    display: flex;
+    align-items: stretch; /* Assure que les deux colonnes ont la même hauteur */
+    height: 600px; /* Modifié: Définit une hauteur fixe pour la section hero */
+    /* min-height: 600px;  Ancienne valeur, remplacée par height */
+    width: 100%;
+}
+
+.hero-content { /* Colonne de gauche (texte) */
+    width: 50%;
+    padding: 100px 80px; /* Espacement interne: 100px haut/bas, 80px gauche/droite */
+    box-sizing: border-box; /* Crucial pour que le padding soit inclus dans la largeur de 50% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre le contenu textuel verticalement */
+    text-align: left;
+}
+
+.hero-content h1 {
+    color: #000;
+    font-weight: 700;
+    font-size: 3.5rem; /* Taille de police actuelle de l'utilisateur */
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.hero-content p {
+    color: #333;
+    font-size: 1.2rem; /* Taille de police actuelle de l'utilisateur pour .hero p */
+    margin-bottom: 30px;
+    max-width: 100%; /* Permet au paragraphe d'utiliser la largeur disponible (après padding) */
+}
+
+.hero-content .btn-primary {
+    display: inline-block;
+    background-color: #293241; /* Bouton noir comme sur l'image de référence */
+    color: white;
+    padding: 15px 35px; /* Espacement interne du bouton */
+    border-radius: 8px; 
+    font-weight: bold;
+    text-transform: none; /* Texte du bouton en casse normale */
+    transition: background-color 0.3s;
+    align-self: flex-start; /* Rétabli à flex-start pour l'alignement à gauche par défaut */
+}
+
+.hero-content .btn-primary:hover {
+    background-color: #333; /* Couleur au survol */
+}
+
+.hero-image { /* Colonne de droite (image) */
+    width: 50%;
+    background-image: url('/files/TDH-Hero.jpg');
+    background-size: cover; /* L'image couvre toute la zone, peut être rognée */
+    background-position: center; /* Centre l'image */
+    /* min-height est géré par align-items:stretch sur .hero-split */
+}
+
+/* Reste du CSS inchangé */
+.references {
+    padding: 80px 0;
+    background-color: #ffffff;
+    text-align: left;
+    justify-content: left;
+}
+
+.references p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.reference-logos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.logo-item {
+    width: 18%;
+    height: 100px;
+    margin-bottom: 20px;
+    background-color: #e2e8f0;
+    border-radius: 5px;
+}
+
+/* Facts Section */
+.facts {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.fact-item {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.fact-item:hover {
+    transform: translateY(-5px);
+}
+
+.fact-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #23395b;
+    margin-bottom: 15px;
+}
+
+/* Expertise Section */
+.expertise {
+    padding: 80px 0;
+    background-color: #f7fafc;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.expertise-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #293241;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo h3 {
+    font-size: 1.8rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Pour tablettes et écrans plus petits */
+    .hero-split {
+        flex-direction: column; /* Empile le contenu et l'image */
+    }
+    
+    .hero-content {
+        width: 100%; /* Prend toute la largeur */
+        padding: 60px 40px 30px; /* Ajustement du padding */
+        text-align: center; /* Centre le texte */
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem; /* Taille de police légèrement réduite pour le titre */
+    }
+
+    .hero-content p {
+        max-width: 100%;
+        margin: 0 auto 30px;
+    }
+    
+    .hero-image {
+        width: 100%; /* Prend toute la largeur */
+        min-height: 400px; /* Hauteur ajustée pour l'image */
+    }
+
+    .reference-logos {
+        justify-content: center; /* Centre les logos s'ils ne remplissent pas la ligne */
+    }
+
+    .logo-item {
+        width: 30%; /* Environ 3 logos par ligne */
+        margin: 10px;
+    }
+
+    .facts-grid, .expertise-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Permet 1 ou 2 colonnes selon l'espace */
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) { /* Pour téléphones mobiles */
+    h1 { 
+        font-size: 2.2rem;
+    }
+    .hero-content h1 { 
+        font-size: 2.5rem; 
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    .hero-content {
+        padding: 40px 20px 20px; 
+        /* text-align: center; est déjà présent et correct pour le texte */
+    }
+
+    /* Ajout d'une règle spécifique pour le bouton en vue mobile */
+    .hero-content .btn-primary {
+        align-self: center; /* Centre le bouton horizontalement en vue mobile */
+    }
+
+    .main-header .container {
+        /* flex-direction: column; retiré pour garder le logo à gauche et l'icône à droite */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .menu-toggle {
+        display: block; /* Affiche l'icône hamburger */
+    }
+
+    .main-nav {
+        /* Styles pour le menu mobile */
+        position: absolute;
+        top: 100%; /* Se positionne juste en dessous du header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: none; /* Caché par défaut */
+        padding: 10px 0;
+    }
+
+    .main-nav.nav-active { /* Classe pour afficher le menu */
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%;
+    }
+    
+    .main-nav li {
+        margin-left: 0; 
+        margin-bottom: 0; /* Retiré pour un espacement via padding sur 'a' */
+        width: 100%;
+        text-align: center;
+    }
+    .main-nav li a {
+        display: block; /* Pour que le lien prenne toute la largeur */
+        padding: 15px 20px; /* Espacement pour chaque lien */
+        border-bottom: 1px solid #f0f0f0; /* Séparateur léger */
+    }
+    .main-nav li:last-child a {
+        border-bottom: none; /* Pas de bordure pour le dernier élément */
+    }
+
+    .main-nav a.active:after {
+        display: none; /* Cache le soulignement sur mobile, ou stylisez-le différemment */
+    }
+    
+    .hero-image {
+        min-height: 300px; /* Hauteur d'image encore réduite */
+    }
+    
+    .logo-item {
+        width: 45%; /* Environ 2 logos par ligne */
+        margin: 8px;
+    }
+    
+    .facts-grid, .expertise-grid {
+        grid-template-columns: 1fr; /* Une seule colonne pour les faits et l'expertise */
+        gap: 20px;
+    }
+
+    .fact-item, .expertise-item {
+        padding: 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Une seule colonne pour le pied de page */
+        text-align: center;
+    }
+
+    .footer-social .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) { /* Pour très petits écrans */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .hero-content .btn-primary {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+
+    .logo-item {
+        width: 80%; /* Un logo par ligne, centré */
+    }
+}
