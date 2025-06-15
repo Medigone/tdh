@@ -6,8 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "status",
-  "prenom",
   "nom",
+  "prenom",
   "email",
   "telephone",
   "message"
@@ -23,11 +23,13 @@
   {
    "fieldname": "prenom",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Pr\u00e9nom"
   },
   {
    "fieldname": "nom",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Nom"
   },
   {
@@ -50,7 +52,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-15 15:57:10.932714",
+ "modified": "2025-06-15 16:06:27.876407",
  "modified_by": "Administrator",
  "module": "TDH",
  "name": "Formulaire Contact",
