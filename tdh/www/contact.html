@@ -157,7 +157,8 @@
 
                     <!-- Formulaire de contact - Partie droite -->
                     <div class="bg-gray-50 p-8 rounded-2xl">
-                        <form class="space-y-6">
+                        <form class="space-y-6" action="/api/method/tdh.utils.submit_contact_form" method="POST">
+                            <input type="hidden" name="csrf_token" value="{{ frappe.session.csrf_token }}">
                             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                                 <div>
                                     <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">Prénom</label>
