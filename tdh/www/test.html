@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDH - Outils CRM pour votre équipe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0C2A2E;
+            --secondary: #F6F7F9;
+            --accent: #7AE582;
+            --text-primary: #1C1E21;
+            --text-secondary: #5F6368;
+            --background: #FFFFFF;
+            --card-background: #F9FAFB;
+            --button-background: #003F3F;
+            --button-text: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        /* Metrics */
+        .metrics {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background-color: var(--secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--background);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Integrations */
+        .integrations {
+            padding: 80px 0;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .price-card {
+            background: var(--background);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #eaeaea;
+        }
+
+        .price-amount {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 24px 0;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--secondary);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--background);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Resources */
+        .resources {
+            padding: 80px 0;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .resource-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Buttons */
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .button-primary {
+            background-color: var(--button-background);
+            color: var(--button-text);
+        }
+
+        .button-outline {
+            border: 1px solid var(--button-background);
+            color: var(--button-background);
+        }
+
+        @media (max-width: 768px) {
+            .features-grid,
+            .pricing-grid,
+            .testimonial-grid,
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">TDH</div>
+            <nav>
+                <a href="#" class="button button-primary">Commencer</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Outils CRM complets<br>pour votre équipe</h1>
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">+24%</div>
+                        <div class="metric-label">Croissance</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">99%</div>
+                        <div class="metric-label">Satisfaction</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">484</div>
+                        <div class="metric-label">Clients</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">358</div>
+                        <div class="metric-label">Projets</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Travailler plus intelligemment</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Automatisation avancée</h3>
+                        <p>Simplifiez vos processus quotidiens</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Analyses en temps réel</h3>
+                        <p>Prenez des décisions éclairées</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Collaboration d'équipe</h3>
+                        <p>Travaillez ensemble efficacement</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="integrations">
+            <div class="container">
+                <h2>Adaptable et évolutif</h2>
+                <div class="integration-grid">
+                    <!-- Logos des intégrations -->
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <div class="container">
+                <h2>Prix transparents</h2>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <h3>Démarrage</h3>
+                        <div class="price-amount">64€</div>
+                        <a href="#" class="button button-primary">Commencer</a>
+                    </div>
+                    <div class="price-card">
+                        <h3>Pro</h3>
+                        <div class="price-amount">115€</div>
+                        <a href="#" class="button button-primary">Commencer</a>
+                    </div>
+                    <div class="price-card">
+                        <h3>Entreprise</h3>
+                        <div class="price-amount">169€</div>
+                        <a href="#" class="button button-primary">Commencer</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources">
+            <div class="container">
+                <h2>Toutes les ressources dont vous avez besoin</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <img src="/files/resource1.jpg" alt="Resource 1">
+                        <div class="resource-content">
+                            <h3>Guide complet CRM</h3>
+                            <p>Optimisez votre gestion client</p>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <img src="/files/resource2.jpg" alt="Resource 2">
+                        <div class="resource-content">
+                            <h3>Meilleures pratiques</h3>
+                            <p>Conseils d'experts</p>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <img src="/files/resource3.jpg" alt="Resource 3">
+                        <div class="resource-content">
+                            <h3>Études de cas</h3>
+                            <p>Histoires de réussite</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Animations au défilement
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
